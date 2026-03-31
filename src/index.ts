@@ -18,6 +18,16 @@ const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
   { role: "system", content: systemPrompt }
 ];
 
+// 标准工具调用类型定义
+interface StandardToolCall {
+  id: string;
+  type: "function";
+  function: {
+    name: string;
+    arguments: string;
+  };
+}
+
 const tools: OpenAI.Chat.ChatCompletionTool[] = [
   {
     type: "function",
@@ -71,7 +81,7 @@ async function chatLoop() {
         process.stdout.write("Agent 思考/执行中...\r");
 
         const response = await client.chat.completions.create({
-          model: "MiniMax-M2.7", // 保持你测试通过的模型
+          model: "MiniMax-M2.7",
           messages: messages,
           temperature: 0.7,
           tools: tools,
@@ -86,16 +96,19 @@ async function chatLoop() {
           console.log("\x1b[33m%s\x1b[0m", "\n⚙️  Agent 决定采取行动...");
           messages.push(responseMessage); // 记录历史
 
-          for (const toolCall of responseMessage.tool_calls) {
+          // 将 tool_calls 断言为标准类型，OpenAI SDK v6 的类型定义有偏差
+          const toolCalls = responseMessage.tool_calls as unknown as StandardToolCall[];
+
+          for (const toolCall of toolCalls) {
             let toolResultMsg = "";
             let args;
-            
+
             try {
-               args = JSON.parse(toolCall.function.arguments);
+              args = JSON.parse(toolCall.function.arguments);
             } catch (e) {
-               toolResultMsg = "JSON参数解析失败，请检查格式。";
-               console.log(`❌ ${toolResultMsg}`);
-               continue;
+              toolResultMsg = "JSON参数解析失败，请检查格式。";
+              console.log(`❌ ${toolResultMsg}`);
+              continue;
             }
 
             const absolutePath = path.resolve(process.cwd(), args.filePath);
@@ -132,7 +145,7 @@ async function chatLoop() {
           // 如果没有工具调用，说明任务全部完成，输出最终结论！
           isAgentThinking = false;
           const content = responseMessage.content || "";
-          
+
           console.log("\x1b[36m%s\x1b[0m", "\n🤖 Agent 回复:");
           console.log(content);
           console.log("\n" + "-".repeat(50) + "\n");
