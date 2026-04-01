@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC端 - 二维码</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    .device-indicator {
+      background: #667eea;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 25px;
+      display: inline-block;
+      margin-bottom: 24px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    
+    .header {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 32px;
+      color: #333;
+    }
+    
+    .qrcode-container {
+      background: #f8f9fa;
+      border: 2px dashed #d1d5db;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 32px;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .qrcode-placeholder {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    
+    .qrcode-icon {
+      font-size: 80px;
+      opacity: 0.3;
+    }
+    
+    .qrcode-label {
+      font-size: 14px;
+      color: #666;
+      margin-top: 8px;
+    }
+    
+    .description {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    
+    .footer {
+      font-size: 14px;
+      color: #999;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="device-indicator">💻 PC端</div>
+    <h1 class="header">扫码访问</h1>
+    
+    <div class="qrcode-container">
+      <div class="qrcode-placeholder">
+        <span class="qrcode-icon">⬜</span>
+      </div>
+      <p class="qrcode-label">二维码占位符</p>
+    </div>
+    
+    <p class="description">
+      请使用手机扫描上方二维码<br>
+      以访问移动端页面获取更多内容
+    </p>
+    
+    <div class="footer">
+      © 2026 UA Redirect App. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
