@@ -1,0 +1,74 @@
+.dev-process-section {
+  background-color: var(--game-bg);
+}
+
+.dev-process-placeholder {
+  text-align: center;
+  padding: 40px;
+  color: var(--game-text);
+  opacity: 0.7;
+}
+
+.dev-process-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.dev-process-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.dev-process-item.left {
+  flex-direction: row;
+}
+
+.dev-process-item.right {
+  flex-direction: row-reverse;
+}
+
+.dev-process-image {
+  flex: 1;
+}
+
+.dev-process-image img {
+  width: 100%;
+  max-width: 500px;
+  border: var(--pixel-border) solid var(--game-accent);
+  box-shadow: var(--pixel-shadow);
+  image-rendering: pixelated;
+}
+
+.dev-process-content {
+  flex: 1;
+  padding: 30px;
+  background-color: var(--game-secondary);
+  border: var(--pixel-border) solid var(--game-accent);
+  box-shadow: var(--pixel-shadow);
+}
+
+.dev-process-title {
+  font-size: 18px;
+  color: var(--game-highlight);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.dev-process-description {
+  font-size: 12px;
+  color: var(--game-text);
+  line-height: 2;
+}
+
+@media (max-width: 768px) {
+  .dev-process-item {
+    flex-direction: column !important;
+  }
+  
+  .dev-process-image img {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,135 @@
+/* Chrono Portal - 日本像素游戏风格样式 */
+
+/* CSS Variables */
+:root {
+  --pixel-font: 'Press Start 2P', 'Courier New', monospace;
+  --game-bg: #1a1a2e;
+  --game-primary: #e94560;
+  --game-secondary: #16213e;
+  --game-accent: #0f3460;
+  --game-text: #eaeaea;
+  --game-highlight: #ffc107;
+  --pixel-border: 4px;
+  --pixel-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--pixel-font);
+  background-color: var(--game-bg);
+  color: var(--game-text);
+  line-height: 1.6;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+/* Pixel Art Button Style */
+.pixel-btn {
+  font-family: var(--pixel-font);
+  font-size: 12px;
+  padding: 12px 24px;
+  background-color: var(--game-primary);
+  color: white;
+  border: var(--pixel-border) solid transparent;
+  box-shadow: var(--pixel-shadow);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.1s;
+}
+
+.pixel-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.5);
+}
+
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Section Styles */
+.section {
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--game-highlight);
+  text-shadow: 2px 2px 0px var(--game-primary);
+  text-transform: uppercase;
+}
+
+/* Loading & Error States */
+.loading,
+.error {
+  text-align: center;
+  padding: 40px;
+  font-size: 14px;
+}
+
+.error {
+  color: var(--game-primary);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--game-secondary);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: var(--pixel-border) solid var(--game-accent);
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer h3 {
+  font-size: 16px;
+  color: var(--game-highlight);
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 10px;
+  color: var(--game-text);
+  opacity: 0.8;
+}
+
+/* Animations */
+@keyframes pixelFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pixelBlink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.5; }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--game-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--game-accent);
+  border: 2px solid var(--game-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--game-primary);
+}

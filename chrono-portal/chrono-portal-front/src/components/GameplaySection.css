@@ -1,0 +1,53 @@
+.gameplay-section {
+  background-color: var(--game-bg);
+}
+
+.gameplay-placeholder {
+  text-align: center;
+  padding: 40px;
+  color: var(--game-text);
+  opacity: 0.7;
+}
+
+.gameplay-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.gameplay-card {
+  background-color: var(--game-secondary);
+  border: var(--pixel-border) solid var(--game-accent);
+  padding: 30px;
+  text-align: center;
+  box-shadow: var(--pixel-shadow);
+  transition: transform 0.2s;
+}
+
+.gameplay-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px var(--game-primary);
+}
+
+.gameplay-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  image-rendering: pixelated;
+}
+
+.gameplay-title {
+  font-size: 14px;
+  color: var(--game-highlight);
+  margin-bottom: 15px;
+}
+
+.gameplay-description {
+  font-size: 10px;
+  color: var(--game-text);
+  line-height: 1.8;
+}
