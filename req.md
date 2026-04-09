@@ -1,4 +1,7 @@
-“我想建一个网站，需求是：这是一个游戏宣传网站，先实现一个首页，从上到下内容是宣传banner图，游戏玩法说明模块，游戏截图的窄条滚动，游戏制作过程的左图右文布局的说明，底部是常规的“联系我们”等文字footer。相关图片和文字效果，你先占位就可以，告诉我后续怎么补充。动态数据都来自数据库，使用mysql数据库，后端使用java语言，后端具体框架你自行决定。前端使用react+ts框架，页面风格要是日本像素游戏的分割。
+“我目前有一个游戏官网项目。项目位置：/Users/gcc/agent/agentForCode/chrono-portal
+对应前端工程位置：/Users/gcc/agent/agentForCode/chrono-portal/chrono-portal-front
+内容代码都是ai生成的，UI比较粗糙，现在要求是优化样式，可以使用静态资源，位置：/Users/gcc/agent/agentForCode/chrono-portal/assets
+最后目的是让这个前端可运行，且美观，有卡牌游戏官网的风格。
 
 请严格遵守以下操作规范：
 
