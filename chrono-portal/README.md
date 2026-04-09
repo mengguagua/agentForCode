@@ -22,12 +22,25 @@
 
 ### 1. 启动后端服务 (可选 - 如不需要动态数据可跳过)
 
+cd /Users/gcc/agent/agentForCode/chrono-portal/chrono-portal-service && ./mvnw spring-boot:run -s settings.xml
+后端服务已成功在 http://localhost:8080 运行。
+
+**启动步骤**:
+
 ```bash
+# 步骤1: 进入后端服务目录
 cd /Users/gcc/agent/agentForCode/chrono-portal/chrono-portal-service
 
-# 使用 Maven wrapper 启动
+# 步骤2: 使用 Maven wrapper 启动 Spring Boot 应用
+# -s settings.xml: 指定使用项目内的 settings.xml（覆盖全局配置，使用公共 Maven 仓库）
 ./mvnw spring-boot:run -s settings.xml
 ```
+
+**说明**:
+- 项目内的 `settings.xml` 配置了 Maven 中央仓库镜像，解决内网仓库不可用的问题
+- 如果遇到 Maven 依赖下载问题，检查网络连接或 VPN 状态
+- 后端使用 Spring Boot 3.5.3 + MySQL 数据库
+- 应用启动时会自动创建 `chrono_portal` 数据库和表结构
 
 **后端服务地址**: http://localhost:8080
 

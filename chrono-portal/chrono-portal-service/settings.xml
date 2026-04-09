@@ -2,4 +2,13 @@
 <settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <localRepository>/Users/gcc/.m2/repository</localRepository>
+  
+  <mirrors>
+    <mirror>
+      <id>central-mirror</id>
+      <mirrorOf>*</mirrorOf>
+      <name>Mirror to Maven Central</name>
+      <url>https://repo1.maven.org/maven2</url>
+    </mirror>
+  </mirrors>
 </settings>
